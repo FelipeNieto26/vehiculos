@@ -32,4 +32,8 @@ public interface IVehicleRepository extends JpaRepository<VehicleEntity, Integer
 
     @Query("SELECT v FROM VehicleEntity v WHERE LOWER(v.model) =:model")
     List<VehicleEntity> findByModel(@Param("model") String model);
+
+    @Query("SELECT v FROM VehicleEntity v WHERE LOWER(v.color) =:color")
+    List<VehicleEntity> findByColor(@Param("color") String color);
+
 }

@@ -24,5 +24,5 @@ public interface IVehicleService {
 
     void deleteVehicle(Integer id);
 
-
+    List<Vehicle> findByColor (String color);
 }

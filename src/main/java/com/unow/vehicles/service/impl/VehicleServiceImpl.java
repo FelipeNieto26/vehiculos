@@ -194,4 +194,15 @@ public class VehicleServiceImpl implements IVehicleService {
 
 
     }
+
+    @Override
+    public List<Vehicle> findByColor(String color) {
+        log.info("Inicio de proceso de busqueda por color,{}", color);
+        List<VehicleEntity> vehicleEntities = vehicleRepository.findByColor(color);
+        List<Vehicle> response= new ArrayList<>();
+        for (VehicleEntity vehicleEntity : vehicleEntities){
+            response.add(iVehicleMapper.toModel(vehicleEntity));
+        }
+        return response;
+    }
 }

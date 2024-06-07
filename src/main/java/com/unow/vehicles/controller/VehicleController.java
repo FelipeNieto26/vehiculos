@@ -104,4 +104,10 @@ public class VehicleController {
         vehicleService.deleteVehicle(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+
+    @GetMapping("/color/{color}")
+    public ResponseEntity<List<Vehicle>> findByColor (@PathVariable("color") String color){
+        vehicleService.findByColor(color);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }
