@@ -107,7 +107,7 @@ public class VehicleController {
 
     @GetMapping("/color/{color}")
     public ResponseEntity<List<Vehicle>> findByColor (@PathVariable("color") String color){
-        vehicleService.findByColor(color);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vehicleService.findByColor(color));
     }
 }
